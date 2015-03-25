@@ -7,11 +7,27 @@ class ApplicationController < ActionController::Base
   end
 
   def set_user_status
-    cookies.permanent[:status] = status_choice unless cookies.permanent[:status]
+    cookies.permanent[:status] = status_choice unless cookies[:status]
+  end
+
+  def set_user_orientation
+    cookies.permanent[:orientation] = orientation unless cookies[:orientation]
+  end
+
+  def set_sexual_activity_level
+    cookies.permanent[:sexual_activity] = sexual_activity unless cookies[:sexual_activity]
   end
 
   def status_choice
     "pregnant"
+  end
+
+  def orientation
+    "straight"
+  end
+
+  def sexual_activity
+    "sexually active with steady/single partner(s)"
   end
   protect_from_forgery with: :exception
 end
