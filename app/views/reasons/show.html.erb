@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stage:</strong>
+  <%= @reason.stage %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @reason.value %>
+</p>
+
+<%= link_to 'Edit', edit_reason_path(@reason) %> |
+<%= link_to 'Back', reasons_path %>
