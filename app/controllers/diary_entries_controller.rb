@@ -1,6 +1,11 @@
 class DiaryEntriesController < ApplicationController
   before_action :set_diary_entry, only: [:show, :edit, :update, :destroy]
 
+  before_filter :set_tracking_cookie
+  def set_tracking_cookie
+    cookies.permanent[:user_uuid] = SecureRandom.uuid unless cookies[:user_uuid]
+  end
+
   def index
     @diary_entries = DiaryEntry.all
   end
