@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root :to => 'diary_entries#index'
+
   resources :options
 
   resources :actions
