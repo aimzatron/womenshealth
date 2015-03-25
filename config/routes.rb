@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :feelings
+
   resources :diary_entries
 
   resources :contents
