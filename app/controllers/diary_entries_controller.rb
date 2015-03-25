@@ -18,7 +18,7 @@ class DiaryEntriesController < ApplicationController
   end
 
   def create
-    @diary_entry = DiaryEntry.new(params[:diary_entry], uuid: cookies.permanent[:user_uuid])
+    @diary_entry = DiaryEntry.new(diary_entry_params)
 
     respond_to do |format|
       if @diary_entry.save
