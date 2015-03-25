@@ -18,7 +18,7 @@ class FeelingsControllerTest < ActionController::TestCase
 
   test "should create feeling" do
     assert_difference('Feeling.count') do
-      post :create, feeling: { stage: @feeling.stage, value: @feeling.value }
+      post :create, feeling: { key: @feeling.key, options: @feeling.options }
     end
 
     assert_redirected_to feeling_path(assigns(:feeling))
@@ -35,7 +35,7 @@ class FeelingsControllerTest < ActionController::TestCase
   end
 
   test "should update feeling" do
-    patch :update, id: @feeling, feeling: { stage: @feeling.stage, value: @feeling.value }
+    patch :update, id: @feeling, feeling: { key: @feeling.key, options: @feeling.options }
     assert_redirected_to feeling_path(assigns(:feeling))
   end
 

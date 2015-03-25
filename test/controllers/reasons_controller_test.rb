@@ -18,7 +18,7 @@ class ReasonsControllerTest < ActionController::TestCase
 
   test "should create reason" do
     assert_difference('Reason.count') do
-      post :create, reason: { stage: @reason.stage, value: @reason.value }
+      post :create, reason: { key: @reason.key, options: @reason.options }
     end
 
     assert_redirected_to reason_path(assigns(:reason))
@@ -35,7 +35,7 @@ class ReasonsControllerTest < ActionController::TestCase
   end
 
   test "should update reason" do
-    patch :update, id: @reason, reason: { stage: @reason.stage, value: @reason.value }
+    patch :update, id: @reason, reason: { key: @reason.key, options: @reason.options }
     assert_redirected_to reason_path(assigns(:reason))
   end
 

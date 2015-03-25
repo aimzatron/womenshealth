@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325031050) do
+ActiveRecord::Schema.define(version: 20150325171453) do
 
   create_table "actions", force: true do |t|
-    t.string   "stage"
-    t.string   "value"
+    t.string   "key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,15 +27,22 @@ ActiveRecord::Schema.define(version: 20150325031050) do
   end
 
   create_table "feelings", force: true do |t|
-    t.string   "stage"
+    t.string   "key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "options", force: true do |t|
     t.string   "value"
+    t.belongs_to "actions"
+    t.belongs_to "feelings"
+    t.belongs_to "reasons"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "reasons", force: true do |t|
-    t.string   "stage"
-    t.string   "value"
+    t.string   "key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

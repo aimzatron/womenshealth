@@ -1,12 +1,10 @@
 class Feeling < ActiveRecord::Base
+  attr_accessor :key
 
-  def pregnant
-    pregnancy_array = Array.new
-    Feeling.all.each do |feel|
-      if feel.stage == "pregnant"
-        pregnancy_array << feel.value
-      end
-    end
-    pregnancy_array
+  has_many :options
+
+  def key
+    "I feel"
   end
+
 end

@@ -18,7 +18,7 @@ class ActionsControllerTest < ActionController::TestCase
 
   test "should create action" do
     assert_difference('Action.count') do
-      post :create, action: { stage: @action.stage, value: @action.value }
+      post :create, action: { key: @action.key, options: @action.options }
     end
 
     assert_redirected_to action_path(assigns(:action))
@@ -35,7 +35,7 @@ class ActionsControllerTest < ActionController::TestCase
   end
 
   test "should update action" do
-    patch :update, id: @action, action: { stage: @action.stage, value: @action.value }
+    patch :update, id: @action, action: { key: @action.key, options: @action.options }
     assert_redirected_to action_path(assigns(:action))
   end
 
