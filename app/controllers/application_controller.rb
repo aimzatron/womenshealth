@@ -5,5 +5,13 @@ class ApplicationController < ActionController::Base
   def set_tracking_cookie
     cookies.permanent[:user_uuid] = SecureRandom.uuid unless cookies[:user_uuid]
   end
+
+  def set_user_status
+    cookies.permanent[:status] = status_choice unless cookies.permanent[:status]
+  end
+
+  def status_choice
+    "pregnant"
+  end
   protect_from_forgery with: :exception
 end
